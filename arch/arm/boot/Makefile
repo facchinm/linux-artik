@@ -69,6 +69,10 @@ $(obj)/zImage-dtb:	$(obj)/zImage $(DTB_OBJS) FORCE
 
 endif
 
+ifeq ($(CONFIG_OF_RESOLVE),y)
+DTC_FLAGS += -@
+endif
+
 ifneq ($(LOADADDR),)
   UIMAGE_LOADADDR=$(LOADADDR)
 else
