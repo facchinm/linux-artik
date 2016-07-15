@@ -469,6 +469,8 @@ static int exynos_adc_probe(struct platform_device *pdev)
 
 	dev_info(&pdev->dev, "Probed successfully driver.\n");
 
+	exynos_adc_hw_init(info);
+
 	return 0;
 
 err_of_populate:
