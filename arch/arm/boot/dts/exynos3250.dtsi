@@ -967,17 +967,11 @@
 		status = "disabled";
 	};
 
-	spi_3: spi_3 {
+	spi_3: spi-3 {
 		compatible = "spi-gpio";
 		pinctrl-names = "default";
 		pinctrl-0 = <&spi3_pins_bitbanged>;
 		status = "disabled";
-		gpio-sck = <&gpm3 4 0>;
-		gpio-mosi = <&gpm3 5 0>;
-		gpio-miso = <&gpm3 6 0>;
-		cs-gpios = <&gpm3 7 0>;
-		num-chipselects = <1>;
-		#address-cells = <1>;
 	};
 
 	i2s: i2s@13970000 {

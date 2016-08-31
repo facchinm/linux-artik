@@ -477,6 +477,13 @@
 			samsung,pin-drv = <3>;
 		};
 
+		uart_irq: ext-int20 {
+			samsung,pins = "gpx2-4";
+			samsung,pin-function = <0xf>;
+			samsung,pin-pud = <3>;
+			samsung,pin-drv = <3>;
+		};
+
 		eint23: ext-int23 {
 			samsung,pins = "gpx2-7";
 			samsung,pin-function = <0xf>;
@@ -622,7 +629,7 @@
 
 		spi3_pins_bitbanged: spi3_pins_bitbanged {
 			samsung,pins = "gpm3-4", "gpm3-5",  "gpm3-6", "gpm3-7";
-			samsung,pin-function = <0>;
+			samsung,pin-function = <1>;
 			samsung,pin-pud = <0>;
 			samsung,pin-drv = <0>;
 		};

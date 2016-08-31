@@ -71,6 +71,15 @@
 			#clock-cells = <0>;
 			clock-output-names = "audiocdclk";
 		};
+
+		xspitouart: clock@5 {
+			compatible = "fixed-clock";
+			clock-frequency = <14745600>;
+			reg = <5>;
+			#clock-cells = <0>;
+			clock-output-names = "xspitouart";
+		};
+
 	};
 
 	i2c@13860000 {
@@ -698,14 +707,23 @@
 	status = "okay";
 	#address-cells = <1>;
 	#size-cells = <0>;
+	spi-max-frequency = <4000000>;
+	gpio-sck = <&gpm3 4 0>;
+	gpio-mosi = <&gpm3 5 0>;
+	gpio-miso = <&gpm3 6 0>;
+	cs-gpios = <&gpm3 7 0>;
+	num-chipselects = <1>;
+	#address-cells = <1>;
+
 	sc16is750: sc16is750@0 {
-		compatible = "nxp,sc16is750";
+		compatible = "nxp,sc16is752";
 		reg = <0>;
-		/* clocks = <&clk20m>; */
+		clocks = <&xspitouart>;
 		interrupt-parent = <&gpx2>;
 		interrupts = <4 0 0>;
 		gpio-controller;
 		#gpio-cells = <2>;
+		spi-max-frequency = <4000000>;
 	};
 };
 
