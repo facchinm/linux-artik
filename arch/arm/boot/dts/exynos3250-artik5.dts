@@ -694,6 +694,21 @@
 	};
 };
 
+&spi_3 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+	sc16is750: sc16is750@0 {
+		compatible = "nxp,sc16is750";
+		reg = <0>;
+		/* clocks = <&clk20m>; */
+		interrupt-parent = <&gpx2>;
+		interrupts = <4 0 0>;
+		gpio-controller;
+		#gpio-cells = <2>;
+	};
+};
+
 &adc {
 	status = "okay";
 	clock-names = "gate_adcif", "sclk";

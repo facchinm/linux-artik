@@ -619,6 +619,13 @@
 	                samsung,pins = "gpm0-4";
 	                samsung,pin-con-pdn = <3>;
 		};
+
+		spi3_pins_bitbanged: spi3_pins_bitbanged {
+			samsung,pins = "gpm3-4", "gpm3-5",  "gpm3-6", "gpm3-7";
+			samsung,pin-function = <0>;
+			samsung,pin-pud = <0>;
+			samsung,pin-drv = <0>;
+		};
 	};
 };
 
